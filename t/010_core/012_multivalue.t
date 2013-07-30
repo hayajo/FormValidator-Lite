@@ -19,7 +19,7 @@ use CGI;
             [CHOICE => qw/hoge fuga/],
         ],
     );
-    ok(!$v->has_error);
+    ok($v->has_error);
 };
 {
     # Optional parameter foo has multiple zeros and check against ''

@@ -36,9 +36,9 @@ use CGI;
         'foo' => [qw/NOT_NULL INT/],
         'baz' => [qw/INT/],
     );
-    ok(!$v->has_error, 'has error');
+    ok($v->has_error, 'has error');
     ok(!$v->is_error('foo'), 'foo');
-    ok(!$v->is_error('baz'), 'baz');
+    ok($v->is_error('baz'), 'baz');
 }
 
 {

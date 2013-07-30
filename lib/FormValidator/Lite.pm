@@ -58,7 +58,7 @@ sub check {
                     $_ = FormValidator::Lite::Upload->new($q, $key);
                 }
                 my $is_ok = do {
-                    if ((not (defined $_ && length $_)) && $rule_name !~ /^(NOT_NULL|NOT_BLANK|REQUIRED)$/) {
+                    if ((not (defined $_ || length $_)) && $rule_name !~ /^(NOT_NULL|NOT_BLANK|REQUIRED)$/) {
                         1;
                     } else {
                         if (my $file_rule = $FileRules->{$rule_name}) {
